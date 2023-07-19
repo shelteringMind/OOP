@@ -15,7 +15,7 @@ public class SellerAutomate implements Sellable{
         System.out.printf("Продали %d мл. %s с содержанием сахара %d ед. температурой %d градусов.\n"+"%s\n" +
                         "Стоимость составила %d рублей.\n",cocoa.getVolume(),cocoa.getName(),
                 cocoa.getSugarContent(),cocoa.getTemperature(),
-                cocoa.isCream()?"Было добавлено молоко.":"Без молока.",cocoa.getCost());
+                cocoa.isMilk()?"Было добавлено молоко.":"Без молока.",cocoa.getCost());
     }
 
     public void sell(@NotNull Tea tea) {

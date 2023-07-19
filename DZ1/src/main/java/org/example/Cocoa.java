@@ -1,7 +1,7 @@
 package org.example;
 
 public class Cocoa extends HotDrink{
-    Cocoa(String name, int volume, int sugarContent,boolean cream, int temperature, int cost){
-        super(name,volume,sugarContent,cream,temperature,cost);
+    Cocoa(String name, int volume,boolean milk,  int sugarContent,int temperature, int cost){
+        super(name,volume,milk,sugarContent,temperature,cost);
     }
 }

@@ -7,6 +7,8 @@ public class HotDrink{
 
     private boolean cream;
 
+    private boolean milk;
+
     private int temperature;
 
     private int cost;
@@ -18,6 +20,8 @@ public class HotDrink{
     public int getVolume() {
         return volume;
     }
+
+    public boolean isMilk() { return milk; }
 
     public int getSugarContent() {
         return sugarContent;
@@ -35,21 +39,27 @@ public class HotDrink{
         return cost;
     }
 
-    public HotDrink(String name, int volume, int sugarContent,boolean cream, int temperature,int cost) {
+    public HotDrink(String name, int volume, boolean milk, int sugarContent,boolean cream, int temperature,int cost) {
         this.name=name;
         this.volume=volume;
-        this.sugarContent=sugarContent;
         this.temperature=temperature;
-        this.cost=cost;
+
+        this.sugarContent=sugarContent;
         this.cream=cream;
+        this.milk=milk;
+
+        this.cost=cost;
     }
 
     public HotDrink(String name, int volume, int sugarContent, int temperature,int cost) {
-        this.name=name;
-        this.volume=volume;
-        this.sugarContent=sugarContent;
-        this.temperature=temperature;
-        this.cost=cost;
+        this(name,volume,false,sugarContent,false,temperature,cost);
     }
 
+    public HotDrink(String name, int volume, int sugarContent, boolean cream, int temperature,int cost) {
+        this(name,volume,false,sugarContent,cream,temperature,cost);
+    }
+
+    public HotDrink(String name, int volume,boolean milk, int sugarContent, int temperature,int cost) {
+        this(name,volume,milk,sugarContent,false,temperature,cost);
+    }
 }

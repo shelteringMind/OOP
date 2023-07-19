@@ -23,7 +23,7 @@ public class Main {
         Tea tea= new Tea("GreenTea",100,3,60,70);
         sellAutomate.sell(tea);
 
-        Cocoa cocoa= new Cocoa("Cocoa",150,3,false,70,120);
+        Cocoa cocoa= new Cocoa("Cocoa",150,true,3,70,120);
         sellAutomate.sell(cocoa);
     }
 }
