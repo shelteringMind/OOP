@@ -19,8 +19,7 @@ public class RelocateContent<T extends Fruit> extends Box<T>{
                 element=from.getElements().get(0);
                 to.addFruitToBox(element);
                 from.setQuantity(from.getQuantity()-1);
-                from.setBoxWeight(from.getBoxWeight()-from.getElements().get(0).getWeightFruit());
-                from.getElements().remove(0);
+                from.setBoxWeight(from.getBoxWeight()-from.getElements().remove(0).getWeightFruit());
             }
         } else{
             System.out.println("Перенос такого количества содержимого невозможен... \n" +
