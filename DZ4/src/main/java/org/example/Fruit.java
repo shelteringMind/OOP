@@ -1,5 +1,5 @@
 package org.example;
-public abstract class Fruit {
+public abstract class Fruit{
     private String name;
     private String sortFruit;
     private int weightFruit;
