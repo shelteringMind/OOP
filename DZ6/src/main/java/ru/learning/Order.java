@@ -23,7 +23,7 @@ public class Order{
         this.product = product;
     }
 
-    public Order(Client client, Product product, int qnt, double price) {
+    public Order(Client client, Product product, int qnt) {
         this.client = client;
         this.product = product;
         this.qnt = qnt;
