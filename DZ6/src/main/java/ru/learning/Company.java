@@ -1,12 +1,14 @@
 package ru.learning;
 
 public class Company extends Client{
-
-    protected static int CompanyID = 1;
+    private static int id;
     public Company(){
+
+        super.companyID = ++id;
     }
 
     public Company(String name){
+
         super(name);
     }
 

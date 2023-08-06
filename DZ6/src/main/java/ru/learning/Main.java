@@ -7,11 +7,13 @@ public class Main {
      * @param args
      */
     public static void main(String[] args) {
-        Order order = new Order();
+        Company corp = new Company();
+        Product product = new Product();
+        Order order = new Order(corp,product);
         InputOrderFromConsole inputOrder = new InputOrderFromConsole(order);
         OrderToJson orderToJson = new OrderToJson(order);
 
-        inputOrder.inputFromConsole(new Company());
-        orderToJson.saveToJson();
+        inputOrder.inputFromConsole();
+        orderToJson.saveToJson("order.json");
     }
 }

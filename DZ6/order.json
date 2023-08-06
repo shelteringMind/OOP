@@ -1,8 +1,10 @@
 {
+"orderID":"1",
 "clientID":"1",
-"clientName":"Рога  и копыта",
-"product":"рога",
+"clientName":"Рога и копыта",
+"productID":"1",
+"product":"Копыта",
 "qnt":10,
-"price":100.0,
-"cost":1000.0
+"price":8.5,
+"cost":85.0
 }
