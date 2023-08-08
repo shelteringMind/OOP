@@ -9,13 +9,13 @@ public interface View {
 
     /**
      * Отображение списка столиков в приложении
-     * @param tables
+     * @param tables список столиков
      */
     void showTables(Collection<Table> tables);
 
     /**
      * Метод позволяет установить наблюдателя, отслеживающего действия конечного пользователя
-     * @param observer
+     * @param observer наблюдатель
      */
     void setObserver(ViewObserver observer);
 
@@ -28,12 +28,23 @@ public interface View {
      */
     void reservationTable(Date reservationDate, int tableNo, String name);
 
+    /**
+     * Изменить резерв столика по номеру
+     * @param oldReservationNo номер резерва
+     * @param reservationDate дата
+     * @param tableNo номер столика
+     * @param name имя клиента
+     */
+    void changeReservationTable(int oldReservationNo, Date reservationDate, int tableNo, String name);
+
 
     /**
      * Отобразить результат бронирования столика
      * @param reservationId номер брони
      */
     void showReservationTableResult(int reservationId);
+
+    void showChangeReservationTableResult(boolean result);
 
 }
 

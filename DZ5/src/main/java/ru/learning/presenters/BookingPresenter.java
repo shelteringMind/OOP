@@ -1,8 +1,6 @@
 package ru.learning.presenters;
 
 import ru.learning.models.Table;
-import ru.learning.models.TableModel;
-import ru.learning.views.BookingView;
 
 import java.util.Collection;
 import java.util.Date;
@@ -27,18 +25,33 @@ public class BookingPresenter implements ViewObserver {
     }
 
     private void showReservationTableResult(int reservationId){
+
         view.showReservationTableResult(reservationId);
     }
 
+    private void showChangeReservationTableResult(boolean result){
+        view.showChangeReservationTableResult(result);
+    }
     /**
      * Произошло событие, пользователь нажал на кнопку резерва столика
-     * @param reservationDate
-     * @param tableNo
-     * @param name
+     * @param reservationDate дата резервирования
+     * @param tableNo номер столика
+     * @param name имя клиента
      */
     @Override
     public void onReservationTable(Date reservationDate, int tableNo, String name) {
         int reservationId = model.reservationTable(reservationDate, tableNo, name);
         showReservationTableResult(reservationId);
+    }
+    /**
+     * Произошло событие, пользователь нажал на кнопку изменения резерва столика
+     * @param oldReservationTable номер резервирования
+     * @param reservationDate дата резервирования
+     * @param tableNo номер столика
+     * @param name имя клиента
+     */
+    public void onChangeReservationTable(int oldReservationTable, Date reservationDate, int tableNo, String name){
+        boolean result = model.changeReservationTable(oldReservationTable, reservationDate,tableNo, name);
+        showChangeReservationTableResult(result);
     }
 }

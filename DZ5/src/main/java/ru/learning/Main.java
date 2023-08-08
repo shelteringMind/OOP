@@ -1,13 +1,11 @@
 package ru.learning;
 
-import ru.learning.models.Table;
 import ru.learning.models.TableModel;
 import ru.learning.presenters.BookingPresenter;
 import ru.learning.presenters.Model;
 import ru.learning.presenters.View;
 import ru.learning.views.BookingView;
 
-import java.util.ArrayList;
 import java.util.Date;
 
 public class Main {
@@ -15,7 +13,7 @@ public class Main {
     /**
      * TODO: Домашняя работа
      *  метод changeReservationTable должен заработать!!!
-     * @param args
+     * @param args аргументы командной строки
      */
     public static void main(String[] args) {
 
@@ -27,9 +25,8 @@ public class Main {
 
         view.reservationTable(new Date(), 3, "Станислав");
 
-
-
-        //view.changeReservationTable(1001, new Date(), 4, "Станислав");
+        view.changeReservationTable(1001, new Date(), 4, "Станислав");
+        view.changeReservationTable(1000, new Date(), 4, "Станислав");
 
     }
 

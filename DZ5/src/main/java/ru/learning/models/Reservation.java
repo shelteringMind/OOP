@@ -17,6 +17,7 @@ public class Reservation {
     }
 
     public int getId() {
+
         return id;
     }
 
@@ -25,7 +26,16 @@ public class Reservation {
     }
 
     public String getName() {
+
         return name;
+    }
+
+    public void setDate(Date date) {
+        this.date = date;
+    }
+
+    public void setName(String name) {
+        this.name = name;
     }
 
     public Reservation(Date date, String name) {

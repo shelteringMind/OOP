@@ -25,6 +25,14 @@ public class BookingView implements View {
         System.out.printf("Столик успешно забронирован. Номер вашей брони: #%d\n", reservationId);
     }
 
+    public void showChangeReservationTableResult(boolean result){
+        if (result){
+            System.out.println("Данные бронирования столика успешно изменены.");
+        } else {
+            System.out.println("Не удалось изменить данные бронирования столика.");
+        }
+    }
+
     @Override
     public void setObserver(ViewObserver observer) {
         this.observer = observer;
@@ -37,13 +45,14 @@ public class BookingView implements View {
     /**
      * TODO: Необходимо разработать самостоятельно в рамках домашней работы.
      * Удаление старого резерва столика. Бронирование столика на новое время.
-     * @param oldReservationTable
-     * @param reservationDate
-     * @param tableNo
-     * @param name
+     * @param oldReservationTable номер резервирования
+     * @param reservationDate дата резервирования
+     * @param tableNo номер столика
+     * @param name имя клиента
      */
     public void changeReservationTable(int oldReservationTable, Date reservationDate, int tableNo, String name){
         //TODO: Необходимо обратиться к наблюдателю ...
+        observer.onChangeReservationTable(oldReservationTable, reservationDate, tableNo, name);
     }
 
 }

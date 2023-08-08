@@ -9,7 +9,7 @@ public interface Model {
 
     /**
      * Получить список всех столиков
-     * @return
+     * @return список столиков
      */
     Collection<Table> loadTables();
 
@@ -21,5 +21,6 @@ public interface Model {
      * @return номер брони
      */
     int reservationTable(Date reservationDate, int tableNo, String name);
+    boolean changeReservationTable(int oldReservationNo, Date reservationDate, int tableNo, String name);
 }
 

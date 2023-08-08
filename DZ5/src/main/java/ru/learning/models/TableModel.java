@@ -40,18 +40,24 @@ public class TableModel implements Model {
         throw new RuntimeException("Некорректный номер столика.");
     }
 
-
     /**
      * TODO: Необходимо разработать самостоятельно в рамках домашней работы.
      * Отмена старой брони по номеру. Резервирование столика на новую дату и время.
-     * @param oldReservationNo
-     * @param reservationDate
-     * @param tableNo
-     * @param Name
-     * @return
+     * @param oldReservationNo номер резервирования
+     * @param reservationDate дата резервирования
+     * @param tableNo номер столика
+     * @param name имя клиена
+     * @return удалось или нет изменить данные резервирования
      */
-    public int changeReservationTable(int oldReservationNo, Date reservationDate, int tableNo, String Name){
-        return -1;
+    public boolean changeReservationTable(int oldReservationNo, Date reservationDate, int tableNo, String name){
+        for (Table table : loadTables()) {
+            if (table.getReservation(table.getReservations(),oldReservationNo) != null){
+                table.getReservation(table.getReservations(),oldReservationNo).setDate(reservationDate);
+                table.getReservation(table.getReservations(),oldReservationNo).setName(name);
+                return true;
+            }
+        }
+        return false;
     }
 }
 

@@ -19,6 +19,16 @@ public class Table {
         return reservations;
     }
 
+    public Reservation getReservation(Collection<Reservation> reservations, int reservationNo){
+        for (Reservation reservation : reservations ){
+            if (reservation.getId() == reservationNo){
+                return reservation;
+            }
+        }
+        return null;
+
+    }
+
     public int getNo() {
         return no;
     }
