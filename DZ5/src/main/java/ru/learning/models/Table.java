@@ -26,15 +26,19 @@ public class Table {
             }
         }
         return null;
-
     }
 
-    public int getNo() {
-        return no;
+    public void removeReservation(int reservationNo){
+        for (Reservation reservation : reservations ){
+            if (reservation.getId() == reservationNo){
+                reservations.remove(reservation);
+                return;
+            }
+        }
     }
+
+    public int getNo() { return no;}
 
     @Override
-    public String toString() {
-        return String.format("Столик #%d", no);
-    }
+    public String toString() { return String.format("Столик #%d", no); }
 }

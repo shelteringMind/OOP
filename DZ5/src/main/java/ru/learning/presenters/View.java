@@ -37,14 +37,13 @@ public interface View {
      */
     void changeReservationTable(int oldReservationNo, Date reservationDate, int tableNo, String name);
 
-
     /**
      * Отобразить результат бронирования столика
      * @param reservationId номер брони
      */
     void showReservationTableResult(int reservationId);
 
-    void showChangeReservationTableResult(boolean result);
+    void showChangeReservationTableResult(int newReservationId);
 
 }
 

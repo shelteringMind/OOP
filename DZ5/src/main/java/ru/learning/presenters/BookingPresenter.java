@@ -25,12 +25,11 @@ public class BookingPresenter implements ViewObserver {
     }
 
     private void showReservationTableResult(int reservationId){
-
         view.showReservationTableResult(reservationId);
     }
 
-    private void showChangeReservationTableResult(boolean result){
-        view.showChangeReservationTableResult(result);
+    private void showChangeReservationTableResult(int newReservationId){
+        view.showChangeReservationTableResult(newReservationId);
     }
     /**
      * Произошло событие, пользователь нажал на кнопку резерва столика
@@ -51,7 +50,7 @@ public class BookingPresenter implements ViewObserver {
      * @param name имя клиента
      */
     public void onChangeReservationTable(int oldReservationTable, Date reservationDate, int tableNo, String name){
-        boolean result = model.changeReservationTable(oldReservationTable, reservationDate,tableNo, name);
-        showChangeReservationTableResult(result);
+        int newReservationId = model.changeReservationTable(oldReservationTable, reservationDate,tableNo, name);
+        showChangeReservationTableResult(newReservationId);
     }
 }

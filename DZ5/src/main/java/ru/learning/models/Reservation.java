@@ -8,35 +8,19 @@ public class Reservation {
 
     private final int id;
 
-    private Date date;
+    private final Date date;
 
-    private String name;
+    private final String name;
 
     {
         id = ++counter;
     }
 
-    public int getId() {
+    public int getId() { return id; }
 
-        return id;
-    }
+    public Date getDate() { return date; }
 
-    public Date getDate() {
-        return date;
-    }
-
-    public String getName() {
-
-        return name;
-    }
-
-    public void setDate(Date date) {
-        this.date = date;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
+    public String getName() { return name; }
 
     public Reservation(Date date, String name) {
         this.date = date;

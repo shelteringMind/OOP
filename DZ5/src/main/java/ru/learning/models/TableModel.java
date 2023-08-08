@@ -49,15 +49,14 @@ public class TableModel implements Model {
      * @param name имя клиена
      * @return удалось или нет изменить данные резервирования
      */
-    public boolean changeReservationTable(int oldReservationNo, Date reservationDate, int tableNo, String name){
+    public int changeReservationTable(int oldReservationNo, Date reservationDate, int tableNo, String name){
         for (Table table : loadTables()) {
             if (table.getReservation(table.getReservations(),oldReservationNo) != null){
-                table.getReservation(table.getReservations(),oldReservationNo).setDate(reservationDate);
-                table.getReservation(table.getReservations(),oldReservationNo).setName(name);
-                return true;
+                table.removeReservation(oldReservationNo);
+                return reservationTable(reservationDate,tableNo,name);
             }
         }
-        return false;
+        return -1;
     }
 }
 

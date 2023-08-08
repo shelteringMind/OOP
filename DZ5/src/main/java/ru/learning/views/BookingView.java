@@ -10,10 +10,7 @@ import java.util.Date;
 
 public class BookingView implements View {
 
-
     private ViewObserver observer;
-
-
 
     public void showTables(Collection<Table> tables){
         for (Table table: tables) {
@@ -22,21 +19,19 @@ public class BookingView implements View {
     }
 
     public void showReservationTableResult(int reservationId){
-        System.out.printf("Столик успешно забронирован. Номер вашей брони: #%d\n", reservationId);
+        System.out.printf("Столик успешно забронирован. Номер Вашей брони: #%d\n", reservationId);
     }
 
-    public void showChangeReservationTableResult(boolean result){
-        if (result){
-            System.out.println("Данные бронирования столика успешно изменены.");
+    public void showChangeReservationTableResult(int newReservationId){
+        if (newReservationId != -1){
+            System.out.printf("Данные бронирования столика успешно изменены. Новый номер Вашей брони #%d\n", newReservationId);
         } else {
             System.out.println("Не удалось изменить данные бронирования столика.");
         }
     }
 
     @Override
-    public void setObserver(ViewObserver observer) {
-        this.observer = observer;
-    }
+    public void setObserver(ViewObserver observer) { this.observer = observer; }
 
     public void reservationTable(Date reservationDate, int tableNo, String name){
         observer.onReservationTable(reservationDate, tableNo, name);
@@ -54,5 +49,4 @@ public class BookingView implements View {
         //TODO: Необходимо обратиться к наблюдателю ...
         observer.onChangeReservationTable(oldReservationTable, reservationDate, tableNo, name);
     }
-
 }

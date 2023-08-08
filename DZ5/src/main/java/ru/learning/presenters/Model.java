@@ -21,6 +21,6 @@ public interface Model {
      * @return номер брони
      */
     int reservationTable(Date reservationDate, int tableNo, String name);
-    boolean changeReservationTable(int oldReservationNo, Date reservationDate, int tableNo, String name);
+    int changeReservationTable(int oldReservationNo, Date reservationDate, int tableNo, String name);
 }
 
