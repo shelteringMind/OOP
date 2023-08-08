@@ -26,7 +26,7 @@ public class Main {
         view.reservationTable(new Date(), 3, "Станислав");
 
         view.changeReservationTable(1001, new Date(), 4, "Станислав");
-        view.changeReservationTable(1003, new Date(), 4, "Станислав");
+        view.changeReservationTable(1003, new Date(), 5, "Станислав");
 
     }
 
